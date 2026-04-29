@@ -7,6 +7,7 @@ const logger = require('./utils/logger');
 
 // Route imports
 const healthRoutes = require('./routes/health');
+const authRoutes = require('./routes/authRoutes');
 
 // Initialize Express app
 const app = express();
@@ -29,6 +30,7 @@ connectDB();
 
 // Routes
 app.use('/api', healthRoutes);
+app.use('/api/auth', authRoutes);
 
 // 404 Handler
 app.use(notFoundHandler);
